@@ -28,5 +28,5 @@ jobs:
         GIT_USERNAME: ${{ github.username }}
       run : |
        docker build -t ramana96/karthik:latest .
-       docker login -u $GIT_USERNAME -p $GIT_PASSWORD
+       echo $GIT_PASSWORD | docker login -u $GIT_USERNAME --password-stdin
        docker push ramana96/karthik
